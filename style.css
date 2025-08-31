@@ -1,0 +1,301 @@
+/* Navbar styles */
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: linear-gradient(90deg, #4f8cff 0%, #38f9d7 100%);
+  padding: 4px 16px 4px 0;
+  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Rules button styling */
+.nav-btn {
+  background: #fff;
+  color: #4f8cff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.12);
+  transition: background 0.2s, color 0.2s, transform 0.1s;
+  outline: none;
+  letter-spacing: 1px;
+}
+.nav-btn:hover {
+  background: #4f8cff;
+  color: #fff;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Game boundary styling */
+#boundary {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  margin: 40px auto 20px auto;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  border: 4px solid #4f8cff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  overflow: hidden;
+  margin-top: -75px;
+  margin-left: 150px;
+}
+
+/* Snake segment styling */
+.snake-segment {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(67, 233, 123, 0.3);
+  border: 2px solid #1de9b6;
+  transition: box-shadow 0.2s;
+  animation: snakePulse 0.7s infinite alternate;
+}
+
+@keyframes snakePulse {
+  0% { box-shadow: 0 2px 8px rgba(67, 233, 123, 0.3); }
+  100% { box-shadow: 0 4px 16px rgba(67, 233, 123, 0.5); }
+}
+
+/* Food styling */
+#food {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 30% 30%, #ffb347 60%, #ffcc33 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 12px 0 rgba(255, 204, 51, 0.4);
+  border: 2px solid #ff9800;
+  animation: foodBounce 0.8s infinite alternate;
+}
+
+@keyframes foodBounce {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.15); }
+}
+
+/* Score display styling */
+#score {
+  display: block;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4f8cff;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 8px #b3c6ff;
+  letter-spacing: 2px;
+}
+
+/* Controls container beside the boundary */
+.controls-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  gap: 18px;
+  height: 700px;
+}
+
+/* Layout for game and controls */
+.game-layout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  gap: 40px;
+}
+
+.game-layout > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style all control buttons consistently */
+#keys, #pause, #restart, #mouse {
+  background: linear-gradient(90deg, #4f8cff 0%, #38f9d7 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.2);
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  outline: none;
+  letter-spacing: 1px;
+  width: 140px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#keys:hover, #pause:hover, #restart:hover, #mouse:hover {
+  background: linear-gradient(90deg, #38f9d7 0%, #4f8cff 100%);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 16px rgba(79, 140, 255, 0.25);
+}
+
+/* Selected state for keys and mouse buttons */
+#keys.selected, #mouse.selected {
+  background: linear-gradient(90deg, #2e5bb8 0%, #2bb8a0 100%);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(79, 140, 255, 0.4);
+  border: 2px solid #fff;
+}
+
+/* Pause button selected state */
+#pause.selected {
+  background: linear-gradient(90deg, #ff6b6b 0%, #ff8e8e 100%);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(255, 107, 107, 0.4);
+  border: 2px solid #fff;
+}
+
+#mouse {
+  background: linear-gradient(90deg, #4f8cff 0%, #38f9d7 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(79, 140, 255, 0.2);
+}
+#mouse:hover {
+  background: linear-gradient(90deg, #38f9d7 0%, #4f8cff 100%);
+  color: #fff;
+  border-color: #38f9d7;
+}
+#mouse.selected {
+  background: linear-gradient(90deg, #2e5bb8 0%, #2bb8a0 100%);
+  color: #fff;
+  border-color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(79, 140, 255, 0.4);
+}
+
+/* Center the main game container */
+body {
+  background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+/* Game container to center everything */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: calc(100vh - 60px);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #4f8cff;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #b3c6ff;
+  margin-top: -10px;
+}
+
+.rules {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #020f28;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #b3c6ff;
+  text-align: left;
+  margin-top: 18px;
+  max-width: 700px;
+}
+
+/* Modal styles for rules popup */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  margin: 5% auto;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.close:hover,
+.close:focus {
+  color: #4f8cff;
+}
+.modal h3 {
+  color: #4f8cff;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.modal p {
+  margin: 12px 0;
+  line-height: 1.6;
+  color: #333;
+}

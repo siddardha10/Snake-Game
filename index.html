@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <button class="nav-btn" onclick="openRulesModal()">Rules</button>
+  </nav>
+  
+  <div class="game-container">
+    <h1>Snake Game</h1>
+    <div class="game-layout">
+      <div>
+        <div id="boundary">
+          <div id="snake"></div>
+          <div id="food"></div>
+        </div>
+      </div>
+      <div class="controls-container">
+        <button id="keys">Keys</button>
+        <button id="mouse">Mouse</button>
+        <button id="pause">Pause</button>
+        <button id="restart">Restart</button>
+        <div id="score">Score: 0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rules Modal -->
+  <div id="rulesModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeRulesModal()">&times;</span>
+      <h3>Rules</h3>
+      <p>1. Select the option to play the game (Keys or Mouse)</p>
+      <p>2. Use the arrow keys to move the snake (Keys)</p>
+      <p>3. Use the mouse to move the snake (Mouse)</p>
+      <p>4. The snake will grow as it eats the food</p>
+      <p>5. If you select the mouse option, the snake can hit itself</p>
+      <p>6. The game will end if the snake hits the boundary</p>
+      <p>7. The game will end if the snake hits itself</p>
+      <p>8. The game will end if the snake hits the wall</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
